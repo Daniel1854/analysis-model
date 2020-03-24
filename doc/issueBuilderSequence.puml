@@ -1,11 +1,18 @@
+
 @startuml
+
+title IssueBuilder Sequenzdiagramm
+participant Client
+
+create IssueBuilderInstance
 Client -> IssueBuilderInstance: gimme new
 
 Client -> IssueBuilderInstance: setFileName("affected.file")
 Client -> IssueBuilderInstance: setLineStart(0)
 
-IssueBuilderInstance --> IssueInstance: new (pathName, "affected.file", 0, lineEnd, columnStart, columnEnd, lineRanges, category, type, packageName, moduleName, severity,message, description, origin, reference, fingerprint, additionalProperties, id)
-
+create IssueInstance
+IssueBuilderInstance -> IssueInstance: new (..., " affected.file", 0, ...)
+IssueInstance -> IssueBuilderInstance: IssueInstance
 IssueBuilderInstance -> Client: IssueInstance
 
 @enduml
