@@ -1,0 +1,63 @@
+@startuml
+
+Interface Serializable
+Serializable <|-- Issue
+
+class Issue {
+    long serialVersionUID
+    PathUtil PATH_UTIL
+    String UNDEFINED
+
+}
+
+class IssueBuilder {
+        String EMPTY
+        String UNDEFINED
+        TreeString UNDEFINED_TREE_STRING = TreeString.valueOf(UNDEFINED);
+        TreeString EMPTY_TREE_STRING = TreeString.valueOf(StringUtils.EMPTY);
+
+        TreeStringBuilder fileNameBuilder = new TreeStringBuilder();
+        TreeStringBuilder packageNameBuilder = new TreeStringBuilder();
+        rTeeStringBuilder messageBuilder = new TreeStringBuilder();
+
+        lineStart = 0;
+        lineEnd = 0;
+        private int columnStart = 0;
+        private int columnEnd = 0;
+
+        @Nullable
+        private LineRangeList lineRanges;
+
+        @Nullable
+        private String pathName;
+        private TreeString fileName = UNDEFINED_TREE_STRING;
+        private TreeString packageName = UNDEFINED_TREE_STRING;
+
+        @Nullable
+        private String directory;
+        @Nullable
+        private String category;
+        @Nullable
+        private String type;
+        @Nullable
+        private Severity severity;
+
+        private TreeString message = EMPTY_TREE_STRING;
+        private String description = EMPTY;
+
+        @Nullable
+        private String moduleName;
+        @Nullable
+        private String origin;
+        @Nullable
+        private String reference;
+        @Nullable
+        private String fingerprint;
+        @Nullable
+        private Serializable additionalProperties;
+
+        private UUID id = UUID.randomUUID();
+}
+
+
+@enduml
