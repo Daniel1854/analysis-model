@@ -2,12 +2,9 @@ package edu.hm.hafner.analysis;
 
 import org.junit.jupiter.api.Test;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
-import static edu.hm.hafner.analysis.IssueTest.*;
 import static edu.hm.hafner.analysis.assertions.Assertions.*;
 
-public class LineRangerBuilderTest {
+public class LineRangeBuilderTest {
 
     @Test
     void usingSetterToDefine() {
