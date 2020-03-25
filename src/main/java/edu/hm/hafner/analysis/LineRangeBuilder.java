@@ -1,8 +1,8 @@
 package edu.hm.hafner.analysis;
 
 public class LineRangeBuilder {
-    private int start;
-    private int end;
+    private int start = -1;
+    private int end = -1;
 
     public LineRangeBuilder(final int start, final int end) {
         this.start = start;
